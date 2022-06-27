@@ -47,7 +47,15 @@ p {
     width: auto;
 
 }
-
+.swiper-pagination span{
+    color: #F46B5B !important;
+}
+.swiper-button-prev{
+    color: #F46B5B !important;
+}
+.swiper-button-next{
+    color: #F46B5B !important;
+}
 .swiper-slide {
     text-align: center;
     font-size: 18px;

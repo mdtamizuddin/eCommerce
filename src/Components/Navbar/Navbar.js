@@ -33,9 +33,9 @@ const TopNavbar = () => {
                     </Link>
                     <Link className='btn-link flex  items-center text-accent' to={'#'}>
                         <i className="fa-solid  text-primary mr-3 fa-envelope"></i>
-                        dexterousprogrammers@gmail.com
+                        exmaple@gmail.com
                     </Link>
-                    <Link className='btn-link ml-4 flex items-center text-accent' to={'/account'}>
+                    <Link className='btn-link ml-4 flex items-center text-accent' to={'/login'}>
                         <i className="fa-solid text-primary mr-3 fa-user"></i>
                         Account
                     </Link>
@@ -60,7 +60,7 @@ const NavbarBottom = () => {
                     </ul>
                 </div>
                 <a href='/' className="btn btn-ghost normal-case text-xl">
-                    <img src={logo} alt="logo" />
+                   <h1 className='text-primary text-3xl'>E-Commarce</h1>
                 </a>
             </div>
             <div className="navbar-center hidden lg:flex">
