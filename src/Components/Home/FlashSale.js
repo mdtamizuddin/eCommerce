@@ -45,7 +45,6 @@ const FlashSale = () => {
                     <FlashSaleCard />
                     <FlashSaleCard />
                 </div>
-
             </section>
         </main>
     )
