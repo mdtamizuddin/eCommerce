@@ -59,8 +59,8 @@ const NavbarBottom = () => {
                         <Navigations />
                     </ul>
                 </div>
-                <a href='/' className="btn btn-ghost normal-case text-xl">
-                   <h1 className='text-primary text-3xl'>E-Commarce</h1>
+                <a href='/' className="btn-ghost normal-case text-xl">
+                   <img src={logo} alt="" />
                 </a>
             </div>
             <div className="navbar-center hidden lg:flex">

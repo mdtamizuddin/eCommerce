@@ -7,6 +7,7 @@ import smartWatch from '../AllCatagories/icons/SmartWatch.svg'
 import Remote from '../AllCatagories/icons/TvRemote.svg'
 
 const Category = () => {
+
     return (
         <div className='container mx-auto mt-10'>
             <h1 className='text-2xl font-bold'>Category</h1>
@@ -17,8 +18,8 @@ const Category = () => {
                 <Card image={microphone} text={'Microphone'} />
                 <Card image={smartWatch} text={'Smart Watch'} />
                 <Card image={Remote} text={'Tv Remote'} />
-
             </div>
+            
         </div>
     )
 }
@@ -27,7 +28,7 @@ export default Category
 
 function Card({ image, text }) {
     return (
-        <div className='h-12 cursor-pointer w-full border-2 rounded-lg flex p-2 items-center justify-start'>
+        <div className='h-12 hover:shadow-2xl cursor-pointer w-full border-2 rounded-lg flex p-2 items-center justify-start'>
             <img style={{ height: '97%' }} className='' src={image} alt="" />
             <h1 className='text-xl ml-3'>{text}</h1>
         </div>
