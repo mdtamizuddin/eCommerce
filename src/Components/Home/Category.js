@@ -5,6 +5,7 @@ import gamepad from '../AllCatagories/icons/Gamepad.svg'
 import microphone from '../AllCatagories/icons/Microphone.svg'
 import smartWatch from '../AllCatagories/icons/SmartWatch.svg'
 import Remote from '../AllCatagories/icons/TvRemote.svg'
+
 const Category = () => {
     return (
         <div className='container mx-auto mt-10'>
