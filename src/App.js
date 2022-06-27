@@ -19,6 +19,7 @@ function App() {
         <Route path='/register' element={<Register />} />
       </Routes>
       <Subscrive />
+      <h1>Footer</h1>
     </div>
   );
 }
