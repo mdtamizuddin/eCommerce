@@ -1,4 +1,4 @@
-import { Navigate, Route, Routes } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 import './App.css';
 import AllCatagories from './Components/AllCatagories/AllCatagories';
 import Footer from './Components/Footer/Footer';

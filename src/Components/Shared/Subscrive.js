@@ -3,7 +3,7 @@ import NewsLatter from '../Home/images/Newsletter.svg'
 const Subscrive = () => {
     return (
         <div className='py-10 my-20 bg-primary w-full flex items-center'>
-            <div className='lg:flex h-full items-center container mx-auto justify-between'>
+            <div className='flex flex-col lg:flex-row h-full items-center container mx-auto justify-between'>
                 <div className='flex items-center'>
                     <img style={{ height: '80%' }} src={NewsLatter} alt="" />
                     <div className='ml-4'>
