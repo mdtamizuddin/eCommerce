@@ -30,7 +30,7 @@ function Card({ image, text }) {
     return (
         <div className='h-12 hover:shadow-2xl cursor-pointer w-full border-2 rounded-lg flex p-2 items-center justify-start'>
             <img style={{ height: '97%' }} className='' src={image} alt="" />
-            <h1 className='text-xl ml-3'>{text}</h1>
+            <h1 className='lg:text-xl ml-3'>{text}</h1>
         </div>
     )
 }

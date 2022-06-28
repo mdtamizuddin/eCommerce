@@ -13,14 +13,13 @@ function App() {
     <div className="App">
       <Navbar />
       <Routes>
-        <Route path='/home' element={<Home />} />
-        <Route path='/' element={<Navigate to={'/all-category'} />} />
+        <Route path='/' element={<Home />} />
         <Route path='/all-category' element={<AllCatagories />} />
         <Route path='/login' element={<Login />} />
         <Route path='/register' element={<Register />} />
       </Routes>
-      {/* <Subscrive /> */}
-      <Footer />
+      <Subscrive />
+      {/* <Footer /> */}
     </div>
   );
 }

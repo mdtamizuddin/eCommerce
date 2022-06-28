@@ -8,7 +8,7 @@ import NewArrival from './NewArrival'
 
 const Home = () => {
     return (
-        <div>
+        <div >
             <Header />
             <Category />
             <NewArrival />
