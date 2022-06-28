@@ -101,7 +101,7 @@ p {
 
 @media only screen and (max-width: 1000px) {
     .container {
-        max-width: 95% !important;
+        width: 90%;
     }
 
     .category-sidebar {
@@ -110,7 +110,17 @@ p {
 
     
 }
+@media only screen and (max-width: 600px) {
+    .container {
+        width: 90%;
+    }
 
+    .category-sidebar {
+        display: none;
+    }
+
+    
+}
 .show-sidebar {
     display: unset;
     position: absolute;

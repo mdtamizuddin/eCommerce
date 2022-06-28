@@ -13,7 +13,7 @@ const FlashSale = () => {
     }, 1000);
     return (
         <main className='bg-[#FAF3F2] my-24 py-14 w-full'>
-            <section className='container mx-auto flex'>
+            <section className='container mx-auto lg:flex md:flex'>
                 <div className='w-72'>
                     <h1 className='text-4xl font-bold'>Flash Sale</h1>
                     <h2 className='text-xl my-3'>Sale End In:</h2>
@@ -40,7 +40,7 @@ const FlashSale = () => {
                         Shop Now
                     </button>
                 </div>
-                <div className='grid grid-cols-3 gap-6 ml-6'>
+                <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:ml-6 mt-10 lg:mt-0'>
                     <FlashSaleCard />
                     <FlashSaleCard />
                     <FlashSaleCard />

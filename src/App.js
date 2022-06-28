@@ -1,6 +1,7 @@
 import { Navigate, Route, Routes } from 'react-router-dom';
 import './App.css';
 import AllCatagories from './Components/AllCatagories/AllCatagories';
+import Footer from './Components/Footer/Footer';
 import Home from './Components/Home/Home';
 import Navbar from './Components/Navbar/Navbar';
 import Subscrive from './Components/Shared/Subscrive';
@@ -18,8 +19,8 @@ function App() {
         <Route path='/login' element={<Login />} />
         <Route path='/register' element={<Register />} />
       </Routes>
-      <Subscrive />
-      <h1>Footer</h1>
+      {/* <Subscrive /> */}
+      <Footer />
     </div>
   );
 }
