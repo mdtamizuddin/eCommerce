@@ -1,6 +1,6 @@
 import { Rating, Slider } from '@mui/material'
 import React, { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, NavLink } from 'react-router-dom'
 import ComponentViewer from './Component/ComponentViewer'
 
 const AllCatagories = () => {
@@ -14,9 +14,22 @@ const AllCatagories = () => {
             setClass('category-sidebar')
         }
     }
-    
+
     return (
         <div className='relative'>
+
+            <div className="container mx-auto mt-9">
+                <div class=" breadcrumbs text-xl">
+                    <ul>
+                        <li>
+                            <NavLink to={'/home'}>Home</NavLink>
+                        </li>
+                        <li>
+                            <NavLink className='text-primary' to={'/products'}>All Category</NavLink>
+                        </li>
+                    </ul>
+                </div>
+            </div>
             <nav className='w-full flex items-center  border px-10 md:hidden lg:hidden sticky top-0 z-50 bg-base-200'>
                 <button onClick={showBar} className='btn btn-ghost'><i className="fa-solid text-2xl fa-bars"></i> </button>
 

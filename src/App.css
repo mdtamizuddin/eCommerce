@@ -47,15 +47,27 @@ p {
     width: auto;
 
 }
-.swiper-pagination span{
+
+.swiper-pagination span {
     color: #F46B5B !important;
 }
-.swiper-button-prev{
+
+.swiper-button-prev {
     color: #F46B5B !important;
 }
-.swiper-button-next{
+
+.swiper-button-prev:hover {
+    color: rgb(0, 240, 248) !important;
+}
+
+.swiper-button-next:hover {
+    color: rgb(0, 240, 248) !important;
+}
+
+.swiper-button-next {
     color: #F46B5B !important;
 }
+
 .swiper-slide {
     text-align: center;
     font-size: 18px;
@@ -108,8 +120,9 @@ p {
         display: none;
     }
 
-    
+
 }
+
 @media only screen and (max-width: 600px) {
     .container {
         width: 90% !important;
@@ -119,8 +132,9 @@ p {
         display: none;
     }
 
-    
+
 }
+
 .show-sidebar {
     display: unset;
     position: absolute;
@@ -128,4 +142,11 @@ p {
     z-index: 10;
     transition: all 1s ease-in-out;
     background-color: white;
+}
+
+
+.prodictDetails {
+    width: 70%;
+    margin: auto;
+    height: 100px;
 }

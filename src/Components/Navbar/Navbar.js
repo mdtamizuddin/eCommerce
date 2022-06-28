@@ -59,9 +59,9 @@ const NavbarBottom = () => {
                         <Navigations />
                     </ul>
                 </div>
-                <a href='/' className="btn-ghost normal-case text-xl">
+                <Link to='/' className="btn-ghost normal-case text-xl">
                    <img src={logo} alt="" />
-                </a>
+                </Link>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal items-center p-0">
@@ -85,6 +85,7 @@ const Navigations = () => {
     return (
         <>
             <li className='mx-2'><NavLink className='nl' to='/home'>Home</NavLink></li>
+            <li className='mx-2'><NavLink className='nl' to='/products'>Products</NavLink></li>
             <li className='mx-2'><NavLink className='nl' to='/about'>About</NavLink></li>
             <li className='mx-2'><NavLink className='nl' to='/blog'>Blog</NavLink></li>
             <li className='mx-2'><NavLink className='nl' to='/contact'>Contact</NavLink></li>

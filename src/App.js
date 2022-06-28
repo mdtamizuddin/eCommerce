@@ -1,6 +1,7 @@
 import { Route, Routes } from 'react-router-dom';
 import './App.css';
 import AllCatagories from './Components/AllCatagories/AllCatagories';
+import ProductDetails from './Components/ProductDetails/ProductDetails';
 import Footer from './Components/Footer/Footer';
 import Home from './Components/Home/Home';
 import Navbar from './Components/Navbar/Navbar';
@@ -14,7 +15,9 @@ function App() {
       <Navbar />
       <Routes>
         <Route path='/' element={<Home />} />
-        <Route path='/all-category' element={<AllCatagories />} />
+        <Route path='/home' element={<Home />} />
+        <Route path='/products' element={<AllCatagories />} />
+        <Route path='/products/:id' element={<ProductDetails />} />
         <Route path='/login' element={<Login />} />
         <Route path='/register' element={<Register />} />
       </Routes>
