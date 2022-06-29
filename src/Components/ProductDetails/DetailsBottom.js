@@ -13,7 +13,7 @@ const DetailsBottom = () => {
             <section className='grid grid-cols-1 lg:grid-cols-2  gap-14 mt-10'>
                 <Outlet />
 
-                <div className='review-Form p-7'>
+                <div className='review-Form lg:p-7'>
                     <AddReview />
                 </div>
             </section>

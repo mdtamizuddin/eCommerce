@@ -13,6 +13,7 @@ import Description from './Components/ProductDetails/Description';
 import GitftCard from './Components/ProductDetails/GitftCard';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import About from './Components/About/About';
 
 
 function App() {
@@ -23,7 +24,12 @@ function App() {
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/home' element={<Home />} />
+        <Route path='/about' element={<About />} />
         <Route path='/products' element={<AllCatagories />} />
+
+
+
+
         <Route path='/products/:id' element={<ProductDetails />}>
           <Route index element={<Reviews />} />
           <Route path='review' element={<Reviews />} />
