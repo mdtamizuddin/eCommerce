@@ -8,16 +8,28 @@ import Navbar from './Components/Navbar/Navbar';
 import Subscrive from './Components/Shared/Subscrive';
 import Login from './Components/User/Login';
 import Register from './Components/User/Register';
+import Reviews from './Components/ProductDetails/Reviews';
+import Description from './Components/ProductDetails/Description';
+import GitftCard from './Components/ProductDetails/GitftCard';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 
 function App() {
   return (
     <div className="App">
       <Navbar />
+      <ToastContainer />
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/home' element={<Home />} />
         <Route path='/products' element={<AllCatagories />} />
-        <Route path='/products/:id' element={<ProductDetails />} />
+        <Route path='/products/:id' element={<ProductDetails />}>
+          <Route index element={<Reviews />} />
+          <Route path='review' element={<Reviews />} />
+          <Route path='description' element={<Description />} />
+          <Route path='gift-card' element={<GitftCard />} />
+        </Route>
         <Route path='/login' element={<Login />} />
         <Route path='/register' element={<Register />} />
       </Routes>

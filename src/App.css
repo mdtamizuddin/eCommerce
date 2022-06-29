@@ -29,7 +29,7 @@ p {
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-    background: #F46B5B;
+    background: #f43f5e;
 }
 
 /* Handle on hover */
@@ -38,7 +38,7 @@ p {
 }
 
 .css-187mznn-MuiSlider-root {
-    color: #F46B5B !important;
+    color: #f43f5e !important;
     margin-top: 20px;
 }
 
@@ -49,11 +49,11 @@ p {
 }
 
 .swiper-pagination span {
-    color: #F46B5B !important;
+    color: #f43f5e !important;
 }
 
 .swiper-button-prev {
-    color: #F46B5B !important;
+    color: #f43f5e !important;
 }
 
 .swiper-button-prev:hover {
@@ -65,7 +65,7 @@ p {
 }
 
 .swiper-button-next {
-    color: #F46B5B !important;
+    color: #f43f5e !important;
 }
 
 .swiper-slide {
@@ -149,4 +149,15 @@ p {
     width: 70%;
     margin: auto;
     height: 100px;
+}
+.detailsNav a{
+    padding: 5px 10px;
+    margin-right: 10px;
+    color: black;
+    border-radius: 0%;
+}
+
+.detailsNav a.active{
+    border: 2px solid #f43f5e;
+    color: #f43f5e;
 }

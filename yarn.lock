@@ -7491,6 +7491,11 @@ react-error-overlay@^6.0.11:
   resolved "https://registry.npmjs.org/react-error-overlay/-/react-error-overlay-6.0.11.tgz"
   integrity sha512-/6UZ2qgEyH2aqzYZgQPxEnz33NJ2gNsnHA2o5+o4wW9bLM/JYQitNP9xPhsXwC08hMMovfGe/8retsdDsczPRg==
 
+react-hook-form@^7.33.0:
+  version "7.33.0"
+  resolved "https://registry.yarnpkg.com/react-hook-form/-/react-hook-form-7.33.0.tgz#44a87ddd630f00ebeb0f15aa978f69ca74b8a77b"
+  integrity sha512-h8XoeUHQs1Snx1s/sSvM+eVTSKkWQt8TcrbL+3/Rt5gugxpy4ueL5ZZkubffyNpUyyTz0qM0kwOi2c+JgGTjLA==
+
 react-is@^16.13.1, react-is@^16.7.0:
   version "16.13.1"
   resolved "https://registry.npmjs.org/react-is/-/react-is-16.13.1.tgz"
@@ -7588,6 +7593,13 @@ react-timer-wrapper@^0.4.1:
   dependencies:
     clean-react-props "^0.4.0"
     prop-types "^15.5.10"
+
+react-toastify@^9.0.5:
+  version "9.0.5"
+  resolved "https://registry.yarnpkg.com/react-toastify/-/react-toastify-9.0.5.tgz#310d7bcfcf3887c0e8461ac6068fe1abb8d720e1"
+  integrity sha512-dszPCeQINY+Nm6HmsiAXT/7wsazPqv0S/RuhIYLAW+fTKcd3T1iRjZG0XqrN9nvAzqaE5J6uxMaiBrOevxjY8g==
+  dependencies:
+    clsx "^1.1.1"
 
 react-transition-group@^4.4.2:
   version "4.4.2"

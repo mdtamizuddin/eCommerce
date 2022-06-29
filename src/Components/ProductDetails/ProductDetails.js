@@ -4,16 +4,23 @@ import { useState } from 'react'
 import { NavLink, useParams } from 'react-router-dom'
 import { Navigation } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
+import DetailsBottom from './DetailsBottom';
 
+const data = {
+    desc: `Using CVC8.0 digital noise reduction technology
+    The latest TWS binaural stereo stereo Bluetooth headset with the 5.1 chip gives you very efficient wireless performance.
+    The 5.1 chip manages battery life very well
+    It adopts Bluetooth V5.1 chip, 10m connection distance, stable performance, high transmission, low consumption and strong compatibility.`
+}
 const ProductDetails = () => {
     const { id } = useParams()
     const [counter, setCounter] = useState(1)
     return (
         <main className='mt-20'>
-            <section className='grid grid-cols-2 container mx-auto gap-10 mt-10'>
+            <section className='grid grid-cols-1 lg:grid-cols-2 container mx-auto gap-10 mt-10'>
                 {/* Box 1*/}
                 {/* Box 1 */}
-                <div className='w-full h-auto border rounded-lg overflow-hidden'>
+                <div className='w-full h-96 lg:h-auto rounded-lg overflow-hidden'>
                     <ProductDetailsLeft />
                 </div>
                 {/* Box 1 */}
@@ -21,7 +28,7 @@ const ProductDetails = () => {
                 {/* Box 2 */}
                 {/* Box 2 */}
                 <div className='w-full h-auto border p-7'>
-                    <div class=" breadcrumbs">
+                    <div className=" breadcrumbs">
                         <ul>
                             <li>
                                 <NavLink to={'/home'}>Home</NavLink>
@@ -36,15 +43,17 @@ const ProductDetails = () => {
                     </div>
                     {/* Navigation End  */}
 
-                    <div className='flex mt-3 justify-between'>
-                        <div className='flex'>
+                    <div className='flex flex-col lg:flex-row md:flex-row mt-3 justify-between'>
+                        <div className='flex flex-col lg:flex-row md:flex-row'>
                             <h1 className='flex mr-2 items-center'>
                                 <span className='mr-3 font-bold'>5.0 </span>
                                 <Rating value={5} />
                             </h1>
-                            |
-                            <h2 className='mx-3 text-gray-500'>Review (12)</h2> |
-                            <h2 className='mx-3 text-gray-500'>Sold 88</h2>
+                            <span className='flex'>
+                                |
+                                <h2 className='mx-3 text-gray-500'>Review (12)</h2> |
+                                <h2 className='mx-3 text-gray-500'>Sold 88</h2>
+                            </span>
                         </div>
                         <a href="!#" className='font-bold hover:text-primary'>
                             <i className='fa-solid fa-heart text-primary mr-2'></i>
@@ -52,7 +61,7 @@ const ProductDetails = () => {
                         </a>
                     </div>
                     {/* Stop  */}
-                    <h1 className="text-xl mt-4 font-[600]">
+                    <h1 className="text lg:text-xl mt-4 font-[600]">
                         M10 TWS Earphone 9D Stereo LED Digital Display Touch CVC8.0 Digital Noise Reduction Technology
                     </h1>
                     <h1 className='font-bold text-2xl items-center mt-3 flex'>$29.00
@@ -62,26 +71,23 @@ const ProductDetails = () => {
 
                     <div className='flex justify-around mt-7'>
                         <h2>
-                            <i class="fa-solid text-primary mr-3 fa-truck-fast"></i>
+                            <i className="fa-solid text-primary mr-3 fa-truck-fast"></i>
                             Free Delivery
                         </h2>
                         <h2>
-                            <i class="fa-solid text-primary mr-3 fa-tachograph-digital"></i>
+                            <i className="fa-solid text-primary mr-3 fa-tachograph-digital"></i>
                             Available Voucher
                         </h2>
                         <h2>
-                            <i class="fa-solid text-primary mr-3 fa-box"></i>
+                            <i className="fa-solid text-primary mr-3 fa-box"></i>
                             In Stock
                         </h2>
                     </div>
-                    <div class="divider mt-5"></div>
+                    <div className="divider mt-5"></div>
                     <h4 className='text-xl'>Description</h4>
-                    <p className='mt-3'>Using CVC8.0 digital noise reduction technology
-                        The latest TWS binaural stereo stereo Bluetooth headset with the 5.1 chip gives you very efficient wireless performance.
-                        The 5.1 chip manages battery life very well
-                        It adopts Bluetooth V5.1 chip, 10m connection distance, stable performance, high transmission, low consumption and strong compatibility.</p>
+                    <p className='mt-3 text-sm'>{data.desc.slice(0, 180)}</p>
 
-                    <div className='mt-7 flex items-center justify-between'>
+                    <div className='mt-7 flex-col lg:flex-row md:flex-row flex items-start lg:items-center lg:justify-between justify-start '>
                         <div className='flex items-center'>
                             <h4 className='font-bold text-gray-600'>Quantity</h4>
                             <div className='ml-7'>
@@ -104,14 +110,16 @@ const ProductDetails = () => {
                                 </button>
                             </div>
                         </div>
-                        <div>
+                        <div className='mt-7 lg:mt-0 md:mt-0 flex lg:block justify-between w-full lg:w-auto'>
+                            <button className='btn text-white lg:mr-4 btn-primary'>
+                                Add to cart
+                            </button>
+
                             <button className='btn btn-outline btn-primary hover:text-white'>
                                 Chat
                             </button>
 
-                            <button className='btn text-white ml-4 btn-primary'>
-                                Add to cart
-                            </button>
+
                         </div>
                     </div>
 
@@ -120,6 +128,9 @@ const ProductDetails = () => {
                 {/* Box 2 */}
                 {/* Box 2 */}
             </section>
+
+
+            <DetailsBottom desc={data.desc} />
         </main>
     )
 }
@@ -139,11 +150,11 @@ const ProductDetailsLeft = () => {
             <div
                 style={{
                     backgroundImage: `url(${sLink ? sLink : links[0]})`,
-                    backgroundSize: 'cover ',
+                    backgroundSize: 'contain ',
                     backgroundPosition: 'center',
                     backgroundRepeat: 'no-repeat'
                 }}
-                className='w-full h-[74%] bg-primary'>
+                className='w-full h-[74%]'>
 
             </div>
             <div className='h-auto my-5'>
