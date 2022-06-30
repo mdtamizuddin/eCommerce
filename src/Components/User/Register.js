@@ -38,7 +38,7 @@ const Register = () => {
         updateProfile(auth.currentUser, {
             displayName: data.displayName
         }).then(() => {
-            fetch(`http://localhost:5000/users/${data.email}`, {
+            fetch(`https://dandabazz.onrender.com/users/${data.email}`, {
                 method: "PUT",
                 headers: {
                     'content-type': 'application/json'

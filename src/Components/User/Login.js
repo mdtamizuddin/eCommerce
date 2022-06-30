@@ -16,7 +16,7 @@ const Login = () => {
         signInWithEmailAndPassword(auth, data.email, data.password)
             .then((userCredential) => {
                 const user = userCredential.user;
-                fetch(`http://localhost:5000/users/${data.email}`, {
+                fetch(`https://dandabazz.onrender.com/users/${data.email}`, {
                     method: "PUT",
                     headers: {
                         'content-type': 'application/json'

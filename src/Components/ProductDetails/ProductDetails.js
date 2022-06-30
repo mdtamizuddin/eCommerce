@@ -19,7 +19,7 @@ const ProductDetails = () => {
     const [adding, setAdding] = useState(false)
     const addToCart = () => {
         setAdding(true)
-        fetch('http://localhost:5000/orders', {
+        fetch('https://dandabazz.onrender.com/orders', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -31,7 +31,7 @@ const ProductDetails = () => {
                     images: review.images,
                     quantity: counter
                 },
-                email: user.email
+                email: user?.email
             })
         })
             .then(res => {

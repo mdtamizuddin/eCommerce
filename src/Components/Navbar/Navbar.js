@@ -46,7 +46,7 @@ const TopNavbar = () => {
                     <Link className='btn-link ml-4 flex items-center text-accent' to={'/login'}>
                         <i className="fa-solid text-primary mr-3 fa-user"></i>
                         {
-                            user ? user.displayName || user.email.slice(0, 10) : 'Account'
+                            user ? user?.displayName || user?.email.slice(0, 10) : 'Account'
                         }
 
                     </Link>
@@ -59,8 +59,8 @@ const TopNavbar = () => {
 // Top navbar End Here 
 
 const NavbarBottom = () => {
-    const url = 'http://localhost:5000/orders'
-    const { isLoading, data } = useQuery(['React-codes-sneppet'], () =>
+    const url = 'https://dandabazz.onrender.com/orders'
+    const { isLoading, data } = useQuery(['orders'], () =>
         fetch(url)
             .then(res => res.json()
             )
@@ -89,7 +89,7 @@ const NavbarBottom = () => {
                 </ul>
             </div>
             <div className="navbar-end ">
-                <Link className='relative mr-5' to={'#'}>
+                <Link className='relative mr-5' to={'/cart'}>
                     <div className="badge badge-primary absolute bottom-7 left-2 ml-2 text-white font-bold">{data.length}</div>
                     <img src={cartIcon} alt="cartIcon" />
                 </Link>
