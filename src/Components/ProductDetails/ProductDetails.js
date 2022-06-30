@@ -4,17 +4,51 @@ import { useState } from 'react'
 import { NavLink, useParams } from 'react-router-dom'
 import { Navigation } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
+import useReview from '../Hook/useReview';
 import DetailsBottom from './DetailsBottom';
+import { useAuthState } from 'react-firebase-hooks/auth'
+import auth from '../Firebase/firebase.init'
+import { toast } from 'react-toastify';
 
-const data = {
-    desc: `Using CVC8.0 digital noise reduction technology
-    The latest TWS binaural stereo stereo Bluetooth headset with the 5.1 chip gives you very efficient wireless performance.
-    The 5.1 chip manages battery life very well
-    It adopts Bluetooth V5.1 chip, 10m connection distance, stable performance, high transmission, low consumption and strong compatibility.`
-}
+
 const ProductDetails = () => {
+    const [user, loading] = useAuthState(auth)
+    const { review } = useReview()
     const { id } = useParams()
     const [counter, setCounter] = useState(1)
+    const [adding, setAdding] = useState(false)
+    const addToCart = () => {
+        setAdding(true)
+        fetch('http://localhost:5000/orders', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify({
+                product: {
+                    name: review.name,
+                    price: parseInt(review.price) * counter,
+                    images: review.images,
+                    quantity: counter
+                },
+                email: user.email
+            })
+        })
+            .then(res => {
+                console.log(res)
+                setAdding(false)
+                toast.success("Added On Cart")
+
+            })
+        // .then(data => {
+        //     console.log(data)
+
+        // })
+    }
+
+    if (loading) {
+        return <h1>loading....</h1>
+    }
     return (
         <main className='mt-20'>
             <section className='grid grid-cols-1 lg:grid-cols-2 container mx-auto gap-10 mt-10'>
@@ -51,8 +85,8 @@ const ProductDetails = () => {
                             </h1>
                             <span className='flex'>
                                 |
-                                <h2 className='mx-3 text-gray-500'>Review (12)</h2> |
-                                <h2 className='mx-3 text-gray-500'>Sold 88</h2>
+                                <h2 className='mx-3 text-gray-500'>Review ({review?.reviews?.length})</h2> |
+                                <h2 className='mx-3 text-gray-500'>Sold {review.sold}</h2>
                             </span>
                         </div>
                         <a href="!#" className='font-bold hover:text-primary'>
@@ -62,10 +96,10 @@ const ProductDetails = () => {
                     </div>
                     {/* Stop  */}
                     <h1 className="text lg:text-xl mt-4 font-[600]">
-                        M10 TWS Earphone 9D Stereo LED Digital Display Touch CVC8.0 Digital Noise Reduction Technology
+                        {review.name}
                     </h1>
-                    <h1 className='font-bold text-2xl items-center mt-3 flex'>$29.00
-                        <span className='line-through text-sm ml-3 font-normal text-gray-400'>$59.00</span>
+                    <h1 className='font-bold text-2xl items-center mt-3 flex'>${review.price}
+                        <span className='line-through text-sm ml-3 font-normal text-gray-400'>${review.price * 2}</span>
                         <button className='border btn btn-sm btn-primary border-primary text-white ml-3'>Save 50%</button>
                     </h1>
 
@@ -85,7 +119,7 @@ const ProductDetails = () => {
                     </div>
                     <div className="divider mt-5"></div>
                     <h4 className='text-xl'>Description</h4>
-                    <p className='mt-3 text-sm'>{data.desc.slice(0, 180)}</p>
+                    <p className='mt-3 text-sm'>{review?.description?.slice(0, 180)}</p>
 
                     <div className='mt-7 flex-col lg:flex-row md:flex-row flex items-start lg:items-center lg:justify-between justify-start '>
                         <div className='flex items-center'>
@@ -111,7 +145,9 @@ const ProductDetails = () => {
                             </div>
                         </div>
                         <div className='mt-7 lg:mt-0 md:mt-0 flex lg:block justify-between w-full lg:w-auto'>
-                            <button className='btn text-white lg:mr-4 btn-primary'>
+                            <button
+                                onClick={addToCart}
+                                className={`btn text-white lg:mr-4 btn-primary ${adding && 'loading'}`}>
                                 Add to cart
                             </button>
 
@@ -130,7 +166,7 @@ const ProductDetails = () => {
             </section>
 
 
-            <DetailsBottom desc={data.desc} />
+            <DetailsBottom />
         </main>
     )
 }

@@ -4,7 +4,7 @@ import { useForm } from 'react-hook-form';
 import { toast } from 'react-toastify';
 
 const AddReview = () => {
-    const [rate, setrate] = useState(0)
+    const [rate, setrate] = useState(2)
     const { register, handleSubmit, formState: { errors } } = useForm();
     const onSubmit = data => {
         toast.success('Thanks For Your Review Your Review is Added')

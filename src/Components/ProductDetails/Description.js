@@ -5,7 +5,7 @@ const Description = () => {
     const {review} = useReview()
   return (
     <div>
-        <p>{review.desc}</p>
+        <p>{review.description}</p>
     </div>
   )
 }

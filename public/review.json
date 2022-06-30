@@ -1,0 +1,43 @@
+{
+    "name": "Logitech G502 HERO High Performance Wired Gaming Mouse, HERO 25K Sensor, 25,600 DPI, RGB, Adjustable Weights, 11 Programmable Buttons, On-Board Memory, PC / Mac",
+    "price": 30,
+    "regular": 59,
+    "sold": 120,
+    "rate": 5,
+    "description": "Logitech updated its iconic G502 gaming mouse to deliver even higher performance and more precise functionality than ever. Logitech G502 Hero high Performance Gaming mouse features the next generation Hero 16K Optical sensor, The highest performing and most efficient gaming sensor Logitech has ever made. An all-New lens and an updated tracking algorithm deliver ultra-precise tracking with no acceleration, smoothing, or filtering over the entire DPI range. Now, customize RGB mouse lighting to match your style and environment or sync to other Logitech G products. No matter your gaming style, It's easy to tweak G502 Hero to match your requirements, with custom profiles for your games, adjustable sensitivity from 200 up to 16, 000 DPI, and a tunable weight system that allows for tuning and balancing of up to five 3. 6G weights for just the right balance and feel.",
+    "reviews": [
+        {
+            "id": "1",
+            "rating": 5,
+            "name": "RotCorp",
+            "review": "I'm no 187329871 IQ pro gamer it's got enough buttons for me. The button location are solid enough for me to be satisfied the only issue I have with this mouse is that the scroll wheel now spins freely and is one hell of a headache playing most fps games as the wheel usually switches weapons in most games.",
+            "date": "20 april 2022"
+        },
+        {
+            "id": "2",
+            "rating": 4,
+            "name": "Kandice",
+            "review": "This would be a wonderful mouse other than the constant click/double click issue. The first one I had for a very short time. During that time I was doing a lot of gaming/designing and the click issue showed up very quickly. Amazon was great and provided an exchange. During the time I had the new one, I was not doing as much gaming/designing so the click issue took longer to show up. I am convinced this is a design flaw in the mouse itself. I will not purchase another one of these. The price is not worth it at all with the click issue. To be clear, the click issue is that when you click or try to click and drag, the mouse either doesn't hold the click or double clicks. I have tested this extensively. If it wasn't for that issue, this mouse would be wonderful. However, this creates a lot of issues with gaming, graphic design and so much more when trying to work and renders the mouse almost useless because of productivity.",
+            "date": "26 may 2022"
+        },
+        {
+            "id": "3",
+            "rating": 4,
+            "name": "Nick",
+            "review": "It seems logitech has either a quality control problem or a supply problem because the switches in these mice are absolute garbage. The mouse is honestly one of the best mice I have ever used while it worked - until it didn't. Less than a year old and $75 gets you a mouse that feels great in the hand until the scroll wheel starts jumping around and the left click starts randomly double clicking, and then not clicking at all - all intermittently. There are numerous reviews out there one can find by simply googling 'g502 double click' in which people either return them and hope their next one doesn't do the same, refund them, or the more technical self swap of a mechanical switch for the left click.",
+            "date": "10 jul 2022"
+        },
+        {
+            "id": "4",
+            "rating": 5,
+            "name": "Todd lasseigne",
+            "review": "i play alot of many types of games which makes me need as many buttons as possible on my mouse. i had the g502 and then when i i saw an upgrade, as any serious gamer, i had to have the best. the laser and accuracy is the best ive touched ever.BUT!!!!! they need to add this laser to the g600 mmo mouse and /or arrange the button layout a little bit better for short finger . i frequently hit extra buttons on the mouse and the thumb button makes me hold the entire mouse in a uncomfortable way.",
+            "date": "08 jan 2022"
+        }
+    ],
+    "images": [
+        "https://m.media-amazon.com/images/S/aplus-media/vc/1f5cdc3f-9c9f-4dbe-a13b-22605abfbad4.__CR0,0,488,700_PT0_SX488_V1___.jpg",
+        "https://m.media-amazon.com/images/S/aplus-media/vc/c7739d78-e212-40d6-a0e8-b9266ef06b63.__CR0,0,488,700_PT0_SX488_V1___.jpg",
+        "https://m.media-amazon.com/images/S/aplus-media/vc/f97b5411-1647-4d86-8b49-a844d0bc494b.__CR0,0,488,700_PT0_SX488_V1___.jpg"
+    ]
+}

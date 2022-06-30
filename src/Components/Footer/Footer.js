@@ -94,7 +94,7 @@ const Footer = () => {
                     </p>
                     <span className='text-center'>
                         <i className="fa-solid text-primary text-xl fa-credit-card"></i>
-                        <i class="fa-brands text-xl ml-3 text-primary fa-cc-visa"></i>
+                        <i className="fa-brands text-xl ml-3 text-primary fa-cc-visa"></i>
                         <i className="fa-brands text-xl text-primary ml-3 fa-paypal"></i>
                     </span>
                 </div>

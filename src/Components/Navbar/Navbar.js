@@ -3,6 +3,10 @@ import { Link, NavLink } from 'react-router-dom'
 import logo from './Image/logo.png'
 import cartIcon from './Image/cart-bag.svg'
 import Email from './Image/Email.svg'
+import { useAuthState } from 'react-firebase-hooks/auth'
+import auth from '../Firebase/firebase.init'
+import { useQuery } from 'react-query'
+
 const Navbar = () => {
     return (
         <main className='container mx-auto'>
@@ -17,6 +21,10 @@ export default Navbar
 // navbar  Top Part Is Start Here 
 
 const TopNavbar = () => {
+    const [user, loading] = useAuthState(auth)
+    if (loading) {
+        return <h1>loading....</h1>
+    }
     return (
         <section className='shadow mb-2 px-3 '>
             <div className="topnavContainer hidden justify-items-center lg:flex justify-center lg:justify-between items-center py-2">
@@ -37,7 +45,10 @@ const TopNavbar = () => {
                     </Link>
                     <Link className='btn-link ml-4 flex items-center text-accent' to={'/login'}>
                         <i className="fa-solid text-primary mr-3 fa-user"></i>
-                        Account
+                        {
+                            user ? user.displayName || user.email.slice(0, 10) : 'Account'
+                        }
+
                     </Link>
                 </div>
                 {/* //End Here */}
@@ -48,6 +59,15 @@ const TopNavbar = () => {
 // Top navbar End Here 
 
 const NavbarBottom = () => {
+    const url = 'http://localhost:5000/orders'
+    const { isLoading, data } = useQuery(['React-codes-sneppet'], () =>
+        fetch(url)
+            .then(res => res.json()
+            )
+    )
+    if (isLoading) {
+        return <h1>loading.....</h1>
+    }
     return (
         <div className="navbar bg-base-100">
             <div className="navbar-start">
@@ -60,7 +80,7 @@ const NavbarBottom = () => {
                     </ul>
                 </div>
                 <Link to='/' className="btn-ghost normal-case text-xl">
-                   <img src={logo} alt="" />
+                    <img src={logo} alt="" />
                 </Link>
             </div>
             <div className="navbar-center hidden lg:flex">
@@ -70,7 +90,7 @@ const NavbarBottom = () => {
             </div>
             <div className="navbar-end ">
                 <Link className='relative mr-5' to={'#'}>
-                    <div className="badge badge-primary absolute bottom-7 left-2 ml-2 text-white font-bold">99</div>
+                    <div className="badge badge-primary absolute bottom-7 left-2 ml-2 text-white font-bold">{data.length}</div>
                     <img src={cartIcon} alt="cartIcon" />
                 </Link>
                 <Link to={'#'}>

@@ -3,14 +3,13 @@ import useReview from '../Hook/useReview'
 import ReviewCard from './ReviewCard'
 
 const Reviews = () => {
-    const {review} = useReview()
-    console.log(review)
+    const { review } = useReview()
+    const { reviews } = review
     return (
         <div>
-            <ReviewCard desc={review.desc}/>
-            <ReviewCard desc={review.desc}/>
-            <ReviewCard desc={review.desc}/>
-            <ReviewCard desc={review.desc}/>
+            {
+                reviews?.map(data => <ReviewCard key={data.id} data={data} />)
+            }
         </div>
     )
 }

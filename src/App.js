@@ -16,6 +16,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import About from './Components/About/About';
 
 
+
 function App() {
   return (
     <div className="App">
@@ -26,8 +27,7 @@ function App() {
         <Route path='/home' element={<Home />} />
         <Route path='/about' element={<About />} />
         <Route path='/products' element={<AllCatagories />} />
-
-
+        {/* <Route path='/cart' element={<Cart />} /> */}
 
 
         <Route path='/products/:id' element={<ProductDetails />}>
