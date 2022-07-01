@@ -9,6 +9,7 @@ import DetailsBottom from './DetailsBottom';
 import { useAuthState } from 'react-firebase-hooks/auth'
 import auth from '../Firebase/firebase.init'
 import { toast } from 'react-toastify';
+import useProduct from '../Hook/useProduct';
 
 
 const ProductDetails = () => {
@@ -181,11 +182,12 @@ const ProductDetailsLeft = () => {
         'https://static-01.daraz.com.bd/p/c73fc6702cf30ccb3ad67d2028873248.jpg',
         'https://static-01.daraz.com.bd/p/775e3080308ff2b330ce44201bf8212d.jpg'
     ]
+    const product = useProduct()
     return (
         <div className='w-full h-full'>
             <div
                 style={{
-                    backgroundImage: `url(${sLink ? sLink : links[0]})`,
+                    backgroundImage: `url(${sLink ? sLink : product[0]?.product?.images[0]})`,
                     backgroundSize: 'contain ',
                     backgroundPosition: 'center',
                     backgroundRepeat: 'no-repeat'
@@ -206,7 +208,7 @@ const ProductDetailsLeft = () => {
                         className="mySwiper h-full bg-white"
                     >
                         {
-                            links.map((link, index) => <SwiperSlide key={index} onClick={() => setLink(link)}>
+                            product[0]?.product?.images?.map((link, index) => <SwiperSlide key={index} onClick={() => setLink(link)}>
                                 <img src={link} className='bg-neutral cursor-pointer border h-full w-full' alt='' />
                             </SwiperSlide>)
                         }

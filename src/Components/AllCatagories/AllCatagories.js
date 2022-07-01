@@ -19,7 +19,7 @@ const AllCatagories = () => {
         <div className='relative'>
 
             <div className="container mx-auto mt-9">
-                <div class=" breadcrumbs text-xl">
+                <div className=" breadcrumbs text-xl">
                     <ul>
                         <li>
                             <NavLink to={'/home'}>Home</NavLink>

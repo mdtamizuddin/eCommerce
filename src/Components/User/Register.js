@@ -44,7 +44,7 @@ const Register = () => {
                     'content-type': 'application/json'
                 },
                 body: JSON.stringify({
-                    email: data.email,
+                    email: user.email,
                     user: user
                 })
             })
