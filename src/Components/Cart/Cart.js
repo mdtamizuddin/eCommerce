@@ -2,6 +2,7 @@ import React from 'react'
 import { useState } from 'react'
 import { useQuery } from 'react-query'
 import { Link, NavLink } from 'react-router-dom'
+import Loading from '../Shared/Loading/Loading'
 
 const Cart = () => {
     const [productS, setProduct] = useState({})
@@ -21,7 +22,7 @@ const Cart = () => {
     }
 
     if (isLoading) {
-        return <h1>loading...</h1>
+        return <Loading />
     }
     else if (data.length < 1) {
         return <h1 className='text-4xl font-bold py-10 text-center'>No Order</h1>
@@ -98,7 +99,7 @@ const Cart = () => {
                                 <h2 className='text-xl'>Summary</h2>
                                 <h3 className='flex justify-between mt-5'>Total : <span className='text-primary font-bold'>${productS?.product?.price}</span></h3>
                                 <h3 className='flex justify-between mt-5'>Quantity : <span className='text-primary font-bold'>{productS?.product?.quantity}</span></h3>
-                                <Link to={'/checkout'} className='btn btn-primary w-full mt-10'>CheckOut</Link>
+                                <Link to={`/checkout/${productS._id}`} className='btn btn-primary w-full mt-10'>CheckOut</Link>
                             </>
                             :
                             <div className='flex justify-center items-center h-full w-full text-2xl font-bold'>

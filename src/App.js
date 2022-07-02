@@ -15,7 +15,10 @@ import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import About from './Components/About/About';
 import Cart from './Components/Cart/Cart'
-
+import Checkout from './Components/Cart/Checkout';
+import Payment from './Payment/Payment';
+import Dashboard from './Components/DashBoard/Dashboard'
+import Contact from './Components/Contact/Contact';
 
 function App() {
   return (
@@ -28,6 +31,14 @@ function App() {
         <Route path='/about' element={<About />} />
         <Route path='/products' element={<AllCatagories />} />
         <Route path='/cart' element={<Cart />} />
+        <Route path='/payment' element={<Payment />} />
+        <Route path='/contact' element={<Contact />} />
+
+
+        <Route path='/checkout/:id' element={<Checkout />} />
+        <Route path='/dashboard' element={<Dashboard />} />
+
+
 
 
         <Route path='/products/:id' element={<ProductDetails />}>

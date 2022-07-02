@@ -64,7 +64,7 @@ const Register = () => {
                 <h1 className='text-4xl font-bold mb-5'>Register</h1>
                 <p>
                     Alrady have an account? Please
-                    <Link className='btn btn-link btn-primary' to={'/login'}>Login!</Link>
+                    <Link className='btn-link btn ' to={'/login'}>Login!</Link>
                 </p>
                 <form onSubmit={handleSubmit(onSubmit)}>
                     <TextField

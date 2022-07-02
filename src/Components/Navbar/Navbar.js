@@ -6,6 +6,7 @@ import Email from './Image/Email.svg'
 import { useAuthState } from 'react-firebase-hooks/auth'
 import auth from '../Firebase/firebase.init'
 import { useQuery } from 'react-query'
+import Loading from '../Shared/Loading/Loading'
 
 const Navbar = () => {
     return (
@@ -23,7 +24,7 @@ export default Navbar
 const TopNavbar = () => {
     const [user, loading] = useAuthState(auth)
     if (loading) {
-        return <h1>loading....</h1>
+        return <Loading />
     }
     return (
         <section className='shadow mb-2 px-3 '>
@@ -43,13 +44,20 @@ const TopNavbar = () => {
                         <i className="fa-solid  text-primary mr-3 fa-envelope"></i>
                         exmaple@gmail.com
                     </Link>
-                    <Link className='btn-link ml-4 flex items-center text-accent' to={'/login'}>
-                        <i className="fa-solid text-primary mr-3 fa-user"></i>
-                        {
-                            user ? user?.displayName || user?.email.slice(0, 10) : 'Account'
-                        }
+                    {
+                        user ?
+                            <Link className='btn-link ml-4 flex items-center text-accent' to={'/dashboard'}>
+                                <i className="fa-solid text-primary mr-3 fa-user"></i>
+                                {
+                                    user?.displayName ? user?.displayName : user?.email.slice(0, 10)
+                                }
 
-                    </Link>
+                            </Link>
+                            :
+                            <Link className='btn-link ml-4 flex items-center text-accent' to={'/login'}>
+                                <i className="fa-solid text-primary mr-3 fa-user"></i>Account</Link>
+
+                    }
                 </div>
                 {/* //End Here */}
             </div>
@@ -66,7 +74,7 @@ const NavbarBottom = () => {
             )
     )
     if (isLoading) {
-        return <h1>loading.....</h1>
+        return <Loading />
     }
     return (
         <div className="navbar bg-base-100">
@@ -102,6 +110,10 @@ const NavbarBottom = () => {
 }
 
 const Navigations = () => {
+    const [user, loading] = useAuthState(auth)
+    if (loading) {
+        return <Loading />
+    }
     return (
         <>
             <li className='mx-2'><NavLink className='nl' to='/home'>Home</NavLink></li>
@@ -132,10 +144,20 @@ const Navigations = () => {
                     <i className="fa-solid  text-primary mr-3 fa-envelope"></i>
                     dexterousprogrammers@gmail.com
                 </Link>
-                <Link className='btn-link ml-4 flex items-center text-accent' to={'/account'}>
-                    <i className="fa-solid text-primary mr-3 fa-user"></i>
-                    Account
-                </Link>
+                {
+                    user ?
+                        <Link className='btn-link ml-4 flex items-center text-accent' to={'/dashboard'}>
+                            <i className="fa-solid text-primary mr-3 fa-user"></i>
+                            {
+                                user?.displayName ? user?.displayName : user?.email.slice(0, 10)
+                            }
+
+                        </Link>
+                        :
+                        <Link className='btn-link ml-4 flex items-center text-accent' to={'/login'}>
+                            <i className="fa-solid text-primary mr-3 fa-user"></i>Account</Link>
+
+                }
             </div>
         </>
     )

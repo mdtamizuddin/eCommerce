@@ -43,7 +43,7 @@ const Login = () => {
         <div className='flex user items-center justify-center'>
             <div className='login-form border px-7 py-6'>
                 <h1 className='text-4xl font-bold mb-5'>Login</h1>
-                <p>Don't have an account? Please <Link className='btn btn-link btn-primary' to={'/register'}>Register</Link></p>
+                <p>Don't have an account? Please <Link className='btn-link btn' to={'/register'}>Register</Link></p>
                 <form onSubmit={handleSubmit(onSubmit)}>
                     <TextField
                         {...register("email", { required: true })}

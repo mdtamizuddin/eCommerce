@@ -10,6 +10,7 @@ import { useAuthState } from 'react-firebase-hooks/auth'
 import auth from '../Firebase/firebase.init'
 import { toast } from 'react-toastify';
 import useProduct from '../Hook/useProduct';
+import Loading from '../Shared/Loading/Loading';
 
 
 const ProductDetails = () => {
@@ -48,7 +49,7 @@ const ProductDetails = () => {
     }
 
     if (loading) {
-        return <h1>loading....</h1>
+        return <Loading />
     }
     return (
         <main className='mt-20'>
