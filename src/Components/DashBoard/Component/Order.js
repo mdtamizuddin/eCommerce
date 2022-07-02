@@ -4,7 +4,7 @@ import Loading from '../../Shared/Loading/Loading'
 
 const Order = () => {
   const url = 'https://dandabazz.onrender.com/orders'
-  const { isLoading, data } = useQuery(['Products-all'], () =>
+  const { isLoading, data } = useQuery(['Orders-all'], () =>
     fetch(url)
       .then(res => res.json()
       )
@@ -35,14 +35,14 @@ const Order = () => {
                 <td >
                   <div className="avatar">
                     <div className="w-28 rounded border">
-                      <img src={order.product.images[0]} />
+                      <img src={order?.product?.images[0]} />
                     </div>
                   </div>
                 </td>
-                <td className='text-md'>{order.product.name.slice(0, 30)}..</td>
-                <td>{order.email}</td>
+                <td className='text-md'>{order?.product?.name?.slice(0, 30)}..</td>
+                <td>{order?.email}</td>
                 <td>
-                  <button className='btn btn-primary'>{order.position}...</button>
+                  <button className='btn btn-primary'>{order?.position}...</button>
                 </td>
               </tr>)
             }
