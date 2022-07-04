@@ -14,6 +14,7 @@ import FavoriteIcon from '@mui/icons-material/Favorite';
 import ShareIcon from '@mui/icons-material/Share';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
+import { useNavigate } from 'react-router-dom';
 
 const ExpandMore = styled((props) => {
     const { expand, ...other } = props;
@@ -28,13 +29,13 @@ const ExpandMore = styled((props) => {
 
 export default function BlogCard() {
     const [expanded, setExpanded] = React.useState(false);
-
+    const navigate = useNavigate()
     const handleExpandClick = () => {
         setExpanded(!expanded);
     };
 
     return (
-        <Card sx={{ maxWidth: 345 }}>
+        <Card sx={{ width: '100%' }}>
             <CardMedia
                 component="img"
                 height="194"
@@ -57,7 +58,7 @@ export default function BlogCard() {
                 </IconButton>
                 <ExpandMore
                 >
-                    <button className='btn btn-sm btn-primary'>Read More</button>
+                    <button onClick={()=> navigate('/blog/details')} className='btn btn-sm btn-primary'>Read More</button>
                 </ExpandMore>
             </CardActions>
             <Collapse in={expanded} timeout="auto" unmountOnExit>

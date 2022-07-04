@@ -20,6 +20,7 @@ import Payment from './Payment/Payment';
 import Dashboard from './Components/DashBoard/Dashboard'
 import Contact from './Components/Contact/Contact';
 import Blog from './Components/Blog/Blog';
+import BlogDetails from './Components/Blog/BlogDetails';
 
 function App() {
   return (
@@ -35,6 +36,7 @@ function App() {
         <Route path='/payment' element={<Payment />} />
         <Route path='/contact' element={<Contact />} />
         <Route path='/blog' element={<Blog />} />
+        <Route path='/blog/details' element={<BlogDetails />} />
 
 
         <Route path='/checkout/:id' element={<Checkout />} />
