@@ -5,7 +5,7 @@ const Loading = () => {
     return (
         <div className='flex items-center justify-center h-72'>
             <Box sx={{ display: 'flex', justifyContent: 'center' }}>
-                <CircularProgress style={{ width: '100px', height: '100px' }} />
+                <CircularProgress style={{ width: '50px', height: '50px' }} />
             </Box>
         </div>
     )
