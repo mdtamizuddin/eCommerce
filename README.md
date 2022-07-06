@@ -1,6 +1,6 @@
 # Md Tamiz E-Commarce Website
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Live Site [Create React App](https://dandabazz.vercel.app/).
 
 ## Available Scripts
 
